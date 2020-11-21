@@ -1,0 +1,62 @@
+.nav-item
+{
+    padding-right:17px ;
+}
+#b1
+{
+    padding-left: 660px;
+   
+}
+#b2
+{
+    padding-left: 12px;
+}
+.container-fluid
+{
+    background-color: mediumblue;
+    padding-bottom: 40px;
+}
+#ka
+{
+    position: relative;
+    top: -8px;
+}
+#bs
+{
+    padding: 8px;
+    padding-right: 12px;
+    padding-left: 30px;
+}
+
+#ig
+{
+    position: relative;
+    top: -8px;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+#fea
+{
+    position: relative;
+    top: -8px;
+}
+.ju
+{
+    color:black;
+}
+.ju:hover
+{
+    color: cornflowerblue;
+}
+#ic
+{
+    color: white;
+    padding-right: 6px;
+}
+#lo:hover,#lo1:hover
+{
+    color: red;
+}

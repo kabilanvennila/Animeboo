@@ -1,0 +1,36 @@
+html
+{
+    height: 100%;
+}
+#sg1{
+    padding-top: 15px;
+    position: relative;
+    top: -28px;
+}
+    
+#login
+{
+    color:white;
+    text-align: center;
+    position: relative;
+    top: -8px;
+    padding: 50px;
+    background-image: url('blue2.jpg');
+    width: 100%;
+    height: 100%;
+}
+#si
+{
+    padding-left: 10px;
+    color: deeppink;
+}
+#my_map
+{
+    padding: 600px;
+}
+#whole
+{
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+}

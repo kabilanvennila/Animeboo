@@ -1,0 +1,26 @@
+#greet1
+{
+    text-align: center;
+    color: darkgoldenrod;
+    padding: 40px;
+    background-color: black;
+}
+#signup
+{
+    color: white;
+    position: relative;
+    bottom: 8px;
+    padding: 50px;
+    background-image: url('blue2.jpg');
+    padding-bottom: 10px;
+}
+#li
+{
+    padding-left: 10px;
+    color: deeppink;
+}
+#ak
+{
+    padding-top: -10px;
+    padding-bottom: 25px;
+}
