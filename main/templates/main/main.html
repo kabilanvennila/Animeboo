@@ -1,0 +1,109 @@
+{% extends "main/template.html" %}
+
+{% load static %}
+
+{% block title %}Animeboo{% endblock %}
+
+{% block head %}
+<h2>
+        
+  {% for message in messages %}
+      <div class="alert alert-danger" role="alert">
+      {{message}}
+  {% endfor %}  
+    </div>
+</h2>
+
+<div id="ka">  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div id="ic">
+    <a id="lo" href="{% url 'main' %}"><span class="material-icons">
+      games
+      </span></a>
+      </div>
+    <a id="lo1" class="navbar-brand" href="{% url 'main' %}">Animeboo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Games</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Anime</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Epic clips</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      {% if user.is_authenticated %}
+      <section id="bs">
+        <a style="padding-right: 16px;" href="{% url 'Logout' %}"><button type="button" class="btn btn-danger">Logout</button></a>
+      </section>
+      {% else %}
+      <section id="bs">
+        <a style="padding-right: 16px;" href="{% url 'Login' %}"><button type="button" class="btn btn-danger">Login</button></a>
+
+          <a href="{% url 'Signup' %}"><button  type="button" class="btn btn-warning">Sign up</button></a>
+      </section>
+      {% endif %}
+    </div>
+  </nav>
+  </div>
+  
+
+{% endblock %}
+
+
+{% block content %}
+
+<img id="ig" src="{% static 'main/home.jpg' %}">
+
+
+<h3 class="card-header"><a href="{% url 'home' %}">Featured Posts</a></h3>
+
+<div class="card-group">
+  <div class="card">
+    <a href="#"><img class="card-img-top" src="{% static 'main/f1.jpg' %}" alt="Card image cap"></a>
+    <div class="card-body">
+      <a class="ju" href="#"><h5 class="card-title">Among Us</h5></a>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 95%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <p class="card-text">Among Us is an online multiplayer social deduction game developed and published by American game studio InnerSloth and released on June 15, 2018. The game takes place in a space-themed setting, in which players each take on one of two roles, most being Crewmates, and a predetermined number being Impostors.</p>
+      <p class="card-text"><small class="text-muted">Posted by kabilan<br> 10 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <a href="#"><img class="card-img-top" src="{% static 'main/f2.jpg' %}" alt="Card image cap"></a>
+    <div class="card-body">
+      <a class="ju" href="#"><h5 class="card-title">Valorant</h5></a>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 87%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <p class="card-text">Valorant is a free-to-play multiplayer tactical first-person shooter developed and published by Riot Games, for Microsoft Windows. First teased under the codename Project A in October 2019, the game began a closed beta period with limited access on April 7, 2020, followed by official release on June 2, 2020</p>
+      <p class="card-text"><small class="text-muted">Posted by kabilan<br> 40 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <a href="#"><img class="card-img-top" src="{% static 'main/f3.jpg' %}" alt="Card image cap"></a>
+    <div class="card-body">
+      <a class="ju" href="#"><h5 class="card-title">Fall Guys</h5></a>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 72%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <p class="card-text">Fall Guys: Ultimate Knockout is a platformer battle royale game developed by Mediatonic and published by Devolver Digital. It released for Microsoft Windows and PlayStation 4 on 4 August 2020</p>
+      <p class="card-text"><small class="text-muted">Posted by kabilan<br> 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+{% endblock %}

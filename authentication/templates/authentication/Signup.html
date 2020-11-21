@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'main' %}">Animeboo</a>
+    </nav>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'authentication/Signup.css' %}">
+    <h3>
+       
+        {% for message in messages %} 
+            <div class="alert alert-success" role="alert">
+            {{message}}
+        {% endfor %}  
+          </div>
+    </h3>
+    <title>Signup page</title>
+    <body>
+        <div id="signup">
+            <h3 id="ak">Join us today ! </h3>
+            <form method="POST">
+            {% csrf_token %}
+            {{signup_form.as_p}}
+            <button class="btn btn-danger">Sign up</button>
+            </form>
+            <small>Already have an account ?</small>
+            <a id="li" href="{% url 'Login' %}">Login</a>
+        </div>
+    </body>
+</html>

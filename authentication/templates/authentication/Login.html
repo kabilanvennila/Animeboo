@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'main' %}">Animeboo</a>
+    </nav>
+    <link rel="stylesheet" href="{% static 'authentication/Login.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <title>Login page</title>
+    <h3>
+        
+        {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+            {{message}}
+        {% endfor %}  
+          </div>
+    </h3>
+    <body>
+        <div id="whole">
+        <div id="login">
+            <h5 id="sg1">Login to continue</h5>   
+        
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-danger">Submit</button>
+        </form>
+        
+        <small id="inf" >Don't have an account? </small>
+        <a id="si" href="{% url 'Signup' %}">Sign up</a>
+        </div>
+        </div>
+</body>
+</html>

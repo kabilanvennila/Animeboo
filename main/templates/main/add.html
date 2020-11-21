@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+{% extends "main/template.html" %}
+
+{% load static %}
+
+{% block title %} Add post{% endblock %}
+ 
+{% block head %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div id="ic">
+    <a id="lo" href="{% url 'main' %}"><span class="material-icons">
+      games
+      </span></a>
+      </div>
+    <a id="lo1" class="navbar-brand" href="{% url 'main' %}">Animeboo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+
+<div id="addp">
+<form method="POST" enctype="multipart/form-data" >
+  <h2 id="t1">Add Post</h2>
+  {% csrf_token %}
+  {{form.as_p}}
+  <button class="btn btn-success">Submit</button>
+</form>
+<h5>Wait i have changed my mind <a href="{% url 'home' %}"><button class="btn btn-danger">Cancel</button></a></h5>
+</div>
+
+
+{% endblock %}

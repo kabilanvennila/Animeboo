@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+{% extends "main/template.html" %}
+
+{% load static %}
+
+{% block title %} Blog {% endblock %}
+ 
+{% block head %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div id="ic">
+    <a id="lo" href="{% url 'main' %}"><span class="material-icons">
+      games
+      </span></a>
+      </div>
+    <a id="lo1" class="navbar-brand" href="{% url 'main' %}">Animeboo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <section id="bs">
+        <a style="padding-right: 16px;" href="{% url 'Logout' %}"><button type="button" class="btn btn-danger">Logout</button></a>
+      </section>
+    </div>
+  </nav>
+{% endblock %}
+        
+{% block content %}
+    <h5 >{{posts.id.Title}}</h5>
+      <img  src="{{ Post.Image.url }}" alt="Image">
+        <p>{{posts.Content}}</p>
+        <p ><small class="text-muted">Posted by {{Post.Author}}<br> {{Post.Posted}}</small></p>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+{% extends "main/template.html" %}
+
+{% load static %}
+
+{% block title %} Homepage {% endblock %}
+ 
+{% block head %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div id="ic">
+    <a id="lo" href="{% url 'main' %}"><span class="material-icons">
+      games
+      </span></a>
+      </div>
+    <a id="lo1" class="navbar-brand" href="{% url 'main' %}">Animeboo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <section id="bs">
+        <a style="padding-right: 16px;" href="{% url 'Logout' %}"><button type="button" class="btn btn-danger">Logout</button></a>
+      </section>
+    </div>
+  </nav>
+
+{% endblock %}
+        
+
+{% block content %}
+<h3 id="he">All Posts</h3>
+
+
+<section class="Container" id="bar">
+<div class=row>
+  <ul class="list-group">
+  <a href="{% url 'add' %}"><button type="button" class="btn btn-success">Add Post</button></a>
+  <a href="{% url 'myposts' %}"><button type="button" class="btn btn-warning">My Posts</button></a>
+</ul>
+</div>
+</section> 
+
+
+{% for Post in posts %}
+<div id="blogs" class="card-group">
+  <div class="card">
+    <a href="#"><img class="card-img-top" src="{{ Post.Image.url }}" alt="Image"></a>
+    <!--<a href="{% url 'Individual' Post.id %}"><img class="card-img-top" src="{{ Post.Image.url }}" alt="Image"></a>-->
+    <div class="card-body">
+      <a class="ju" href="#"><h5 class="card-title">{{Post.Title}}</h5></a>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 95%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <p class="card-text">{{Post.Content}}</p>
+      <p class="card-text"><small class="text-muted">Posted by {{Post.Author}}<br> {{Post.Posted}}</small></p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}    
+    
