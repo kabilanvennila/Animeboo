@@ -28,7 +28,7 @@ SECRET_KEY = 'k+i#3_$s#eif5lx%1ldjft5c5ww699m)$z+6z0wj__6*w$8u%!'
 #DEBUG = True
 DEBUG = TEMPLATE_DEBUG = True 
 
-ALLOWED_HOSTS = ['127.0.0.1','kabilan005.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','kabilan005.pythonanywhere.com','animeboo.herokuapp.com']
 
 
 # Application definition
