@@ -3,6 +3,6 @@ Pillow
 gunicorn
 django_heroku
 psycopg2        
-pytz2                                                                                                                                                          
+pytz                                                                                                                                                       
 whitenoise
 dj-database-url
